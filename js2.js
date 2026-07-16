@@ -68,9 +68,16 @@ window.addEventListener("resize", function () {
   altura.textContent = window.innerWidth;
 });
 
-// ex9  
-let alturaTotal = document.body.innerHeight;
-window.addEventListener("scroll", function(){
-   alturaTotal = alturaTotal + window.scrollY;
-   console.log(alturaTotal);
+// ex9
+let alturaTotal = document.body.scrollHeight;
+let alturaTela = window.innerHeight;
+const p = document.createElement("p");
+p.textContent = "fim";
+window.addEventListener("scroll", function () {
+  let scrol = window.scrollY;
+  if((alturaTela + scrol) > (alturaTotal - 50)){
+    document.body.appendChild(p);   
+  }
 });
+
+
