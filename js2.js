@@ -80,4 +80,18 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// ex 10
+const tarefas = document.getElementById("tarefas");
+const adicionar = document.getElementById("novaTarefa"); 
+function novaTarefa(){
+  const novaTarefa = document.createElement("li"); 
+   tarefas.appendChild(novaTarefa);
+    novaTarefa.textContent = "nova tarefa";
+    novaTarefa.addEventListener("dblclick", () => {
+    novaTarefa.remove();
+    });
+}
+adicionar.addEventListener("click", novaTarefa);
+document.addEventListener("keydown", novaTarefa);
+  
 
